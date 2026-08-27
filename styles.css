@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f1419;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(15, 20, 25, 0.95);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #2dd36f;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2dd36f;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #2dd36f;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 50%, #1f4d3d 100%);
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%232dd36f" opacity="0.1" width="50" height="50"/><rect fill="%2345b581" opacity="0.05" x="50" width="50" height="50"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1s ease;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #2dd36f;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #2dd36f;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border: 2px solid #2dd36f;
+}
+
+.cta-button:hover {
+    background: #45b581;
+    border-color: #45b581;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(45, 211, 111, 0.3);
+}
+
+/* Comparison Section */
+.comparison {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2dd36f;
+}
+
+.comparison-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(45, 211, 111, 0.05);
+    border: 2px solid rgba(45, 211, 111, 0.3);
+}
+
+table th {
+    background: linear-gradient(90deg, #2dd36f 0%, #45b581 100%);
+    color: #000;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(45, 211, 111, 0.2);
+}
+
+table tr:hover {
+    background: rgba(45, 211, 111, 0.1);
+}
+
+/* Edition Sections */
+.edition-section {
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+}
+
+.java-section {
+    background: rgba(100, 150, 200, 0.1);
+    border-top: 3px solid #6496c8;
+    border-bottom: 3px solid #6496c8;
+}
+
+.bedrock-section {
+    background: rgba(200, 100, 150, 0.1);
+    border-top: 3px solid #c86496;
+    border-bottom: 3px solid #c86496;
+}
+
+.edition-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edition-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2dd36f;
+}
+
+.edition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.edition-card {
+    background: rgba(45, 211, 111, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid rgba(45, 211, 111, 0.3);
+    transition: all 0.3s;
+}
+
+.edition-card:hover {
+    border-color: #2dd36f;
+    background: rgba(45, 211, 111, 0.15);
+    transform: translateY(-5px);
+}
+
+.edition-card h3 {
+    color: #2dd36f;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.edition-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.edition-card li {
+    padding: 0.5rem 0;
+    color: #d0d0d0;
+}
+
+.edition-card.download {
+    background: linear-gradient(135deg, rgba(45, 211, 111, 0.2), rgba(69, 181, 129, 0.2));
+    border: 2px solid #2dd36f;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #2dd36f;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 1rem 0;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background: #45b581;
+    transform: scale(1.05);
+}
+
+/* Guide Section */
+.guide-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.guide-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2dd36f;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.guide-card {
+    background: rgba(45, 211, 111, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid rgba(45, 211, 111, 0.3);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.guide-card:hover {
+    border-color: #2dd36f;
+    background: rgba(45, 211, 111, 0.15);
+    transform: translateY(-10px);
+}
+
+.guide-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.guide-card h3 {
+    color: #2dd36f;
+    margin-bottom: 0.5rem;
+}
+
+.guide-card p {
+    color: #b0b0b0;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 4rem 2rem;
+    background: rgba(45, 211, 111, 0.05);
+}
+
+.resources-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2dd36f;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background: rgba(45, 211, 111, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid rgba(45, 211, 111, 0.3);
+    transition: all 0.3s;
+}
+
+.resource-card:hover {
+    border-color: #2dd36f;
+    background: rgba(45, 211, 111, 0.15);
+}
+
+.resource-card h3 {
+    color: #2dd36f;
+    margin-bottom: 1rem;
+}
+
+.resource-card a {
+    color: #45b581;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.resource-card a:hover {
+    color: #2dd36f;
+    text-decoration: underline;
+}
+
+.resource-card p {
+    color: #b0b0b0;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 3px solid #2dd36f;
+    color: #808080;
+}
+
+.footer a {
+    color: #2dd36f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #45b581;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .comparison h2,
+    .guide-section h2,
+    .resources-section h2,
+    .edition-section h2 {
+        font-size: 2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+    }
+}
